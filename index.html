@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJOK SMP Zone - Belajar Olahraga Seru & Interaktif</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        smpCyan: '#00F5D4',
+                        smpBlue: '#00BBF9',
+                        smpPurple: '#9B5DE5',
+                        smpPink: '#F15BB5',
+                        smpYellow: '#FEE440',
+                        darkNavy: '#0F172A',
+                    },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8FAFC;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Fredoka', cursive;
+        }
+        .sport-card-hover {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sport-card-hover:hover {
+            transform: translateY(-6px);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00BBF9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-smpCyan selection:text-darkNavy">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 glass-effect border-b-2 border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-smpBlue to-smpPurple rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-smpBlue/30 transform -rotate-3 hover:rotate-0 transition-transform">
+                        <i class="fa-solid fa-volleyball"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold font-heading tracking-wide text-darkNavy">PJOK<span class="text-smpBlue">SMP</span><span class="text-smpPink">.ZONE</span></span>
+                        <p class="text-xs font-semibold text-slate-500">Materi Jasmani & Kesehatan SMP</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-2 font-heading text-base">
+                    <a href="#bola-besar" class="px-4 py-2 rounded-xl text-slate-700 hover:text-smpBlue hover:bg-blue-50 transition">Bola Besar</a>
+                    <a href="#bola-kecil" class="px-4 py-2 rounded-xl text-slate-700 hover:text-smpPurple hover:bg-purple-50 transition">Bola Kecil</a>
+                    <a href="#atletik" class="px-4 py-2 rounded-xl text-slate-700 hover:text-smpPink hover:bg-pink-50 transition">Atletik</a>
+                    <a href="#kebugaran" class="px-4 py-2 rounded-xl text-slate-700 hover:text-emerald-600 hover:bg-emerald-50 transition">Kebugaran</a>
+                    <a href="#kuis-smp" class="ml-2 px-5 py-2.5 bg-gradient-to-r from-smpBlue to-smpPurple text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition">Kuis Seru <i class="fa-solid fa-gamepad ml-1"></i></a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-smpBlue focus:outline-none p-2 text-2xl" aria-label="Buka Menu Navigasi">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-slate-100 px-4 pt-2 pb-6 space-y-2 font-heading">
+            <div class="p-3 bg-blue-50 rounded-xl mb-2 text-xs border border-blue-100 font-sans">
+                <span class="block text-slate-500 font-semibold">Penyusun Materi:</span>
+                <strong class="text-darkNavy block text-sm font-bold">Muhammad Syaamil Arief</strong>
+                <span class="text-smpBlue font-bold block">NPM: 41182191240060</span>
+                <span class="text-smpPurple font-bold block">Paralel 2</span>
+                <span class="text-emerald-700 font-semibold block">Universitas Muhammadiyah Indonesia</span>
+            </div>
+            <a href="#bola-besar" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-blue-50 hover:text-smpBlue">⚽ Permainan Bola Besar</a>
+            <a href="#bola-kecil" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-purple-50 hover:text-smpPurple">🏸 Permainan Bola Kecil</a>
+            <a href="#atletik" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-pink-50 hover:text-smpPink">🏃 Atletik (Lari & Lompat)</a>
+            <a href="#kebugaran" class="mobile-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-emerald-50 hover:text-emerald-600">💪 Kebugaran Jasmani</a>
+            <a href="#kuis-smp" class="mobile-link block px-4 py-3 bg-gradient-to-r from-smpBlue to-smpPurple text-white font-bold text-center rounded-xl shadow-md">Uji Kuis SMP <i class="fa-solid fa-gamepad"></i></a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-blue-50 via-purple-50/40 to-slate-50 py-12 lg:py-16 overflow-hidden">
+        <div class="absolute top-10 left-10 w-24 h-24 bg-smpCyan/20 rounded-full blur-xl"></div>
+        <div class="absolute bottom-10 right-10 w-36 h-36 bg-smpPink/20 rounded-full blur-2xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    
+                    <!-- CREATOR IDENTITY CARD (RAPIR & TERSTRUKTUR) -->
+                    <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-md border-2 border-smpBlue/30 mb-6 text-left w-full sm:w-auto">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-smpBlue to-smpPurple flex items-center justify-center text-white text-2xl font-bold shadow-md flex-shrink-0">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="text-xs sm:text-sm font-semibold text-slate-700 w-full">
+                            <span class="text-slate-400 text-xs font-bold uppercase tracking-wider block mb-0.5">Media Pembelajaran Disusun Oleh:</span>
+                            <strong class="text-darkNavy font-extrabold text-lg sm:text-xl block leading-tight">Muhammad Syaamil Arief</strong>
+                            
+                            <!-- Badges Grid Rapi -->
+                            <div class="flex flex-wrap items-center gap-2 mt-2">
+                                <span class="bg-blue-50 text-smpBlue font-bold px-2.5 py-1 rounded-lg border border-blue-200 text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-id-card"></i> NPM: 41182191240060
+                                </span>
+                                <span class="bg-purple-50 text-smpPurple font-bold px-2.5 py-1 rounded-lg border border-purple-200 text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-users"></i> Paralel 2
+                                </span>
+                                <span class="bg-emerald-50 text-emerald-700 font-bold px-2.5 py-1 rounded-lg border border-emerald-200 text-xs flex items-center gap-1">
+                                    <i class="fa-solid fa-building-columns"></i> Universitas Muhammadiyah Indonesia
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darkNavy leading-tight mb-4">
+                        Kuasai Olahraga, <span class="text-transparent bg-clip-text bg-gradient-to-r from-smpBlue via-smpPurple to-smpPink">Tubuh Bugar & Berprestasi!</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Modul Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) interaktif khusus siswa SMP. Pelajari teknik dasar, kebugaran tubuh, dan selesaikan kuis evaluasi seru!
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#materi-utama" class="px-8 py-4 bg-darkNavy text-white font-heading font-bold text-lg rounded-2xl shadow-xl hover:bg-slate-800 transition text-center sport-card-hover flex items-center justify-center">
+                            Mulai Belajar <i class="fa-solid fa-arrow-down ml-3 text-smpCyan"></i>
+                        </a>
+                        <a href="#kuis-smp" class="px-8 py-4 bg-white text-darkNavy border-2 border-slate-200 font-heading font-bold text-lg rounded-2xl shadow-md hover:bg-slate-50 transition text-center sport-card-hover flex items-center justify-center">
+                            Tantangan Kuis <i class="fa-solid fa-trophy ml-3 text-smpYellow"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-5 shadow-2xl border-2 border-slate-100 relative z-10">
+                        <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden mb-5 bg-slate-900 shadow-inner">
+                            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Siswa SMP Olahraga Sepak Bola" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkNavy/90 via-darkNavy/20 to-transparent flex items-end p-5">
+                                <div class="text-white">
+                                    <span class="bg-smpPink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kurikulum PJOK SMP</span>
+                                    <h3 class="text-xl sm:text-2xl font-bold font-heading mt-2">Teknik & Strategi Olahraga</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Badges Grid -->
+                        <div class="grid grid-cols-3 gap-3 text-center font-heading">
+                            <div class="p-3 bg-blue-50 rounded-xl border border-blue-100">
+                                <i class="fa-solid fa-futbol text-smpBlue text-2xl mb-1"></i>
+                                <p class="text-xs font-bold text-slate-700">Bola Besar</p>
+                            </div>
+                            <div class="p-3 bg-purple-50 rounded-xl border border-purple-100">
+                                <i class="fa-solid fa-table-tennis-paddle-ball text-smpPurple text-2xl mb-1"></i>
+                                <p class="text-xs font-bold text-slate-700">Bola Kecil</p>
+                            </div>
+                            <div class="p-3 bg-pink-50 rounded-xl border border-pink-100">
+                                <i class="fa-solid fa-person-running text-smpPink text-2xl mb-1"></i>
+                                <p class="text-xs font-bold text-slate-700">Atletik</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & QUICK FILTER -->
+    <section id="materi-utama" class="py-8 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-darkNavy font-heading">Cari Materi & Teknik Olahraga</h2>
+                    <p class="text-sm text-slate-500">Ketik kata kunci seperti "Passing", "Smash", "Lay-up", "Start Jongkok", atau "Kebugaran"</p>
+                </div>
+                
+                <div class="w-full md:w-96 relative">
+                    <input type="text" id="search-input" placeholder="Cari materi..." 
+                           class="w-full pl-11 pr-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-smpBlue focus:outline-none text-sm font-semibold text-slate-700 transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERI 1: PERMAINAN BOLA BESAR -->
+    <section id="bola-besar" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 bg-smpBlue text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-md">01</div>
+                <span class="text-smpBlue font-bold text-sm tracking-wider uppercase">Modul Pembelajaran</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-darkNavy font-heading mb-3">Permainan Bola Besar</h2>
+            <p class="text-slate-600 mb-10 max-w-2xl text-sm sm:text-base">Cabang olahraga beregu yang menggunakan bola berukuran besar. Membutuhkan stamina, kekuatan, serta kerja sama tim yang solid.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Sepak Bola (Gambar Dipastikan Hadir dan Rapi) -->
+                <div class="sport-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg sport-card-hover flex flex-col" data-keywords="sepak bola dribbling passing shooting gawang kaki fifa pssi gol">
+                    <div class="relative h-52 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80" 
+                             alt="Permainan Sepak Bola SMP" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80';">
+                        <span class="absolute top-4 left-4 bg-darkNavy/85 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                            <i class="fa-solid fa-futbol text-smpCyan mr-1"></i> Sepak Bola
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-darkNavy font-heading mb-2">Sepak Bola</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">Permainan beregu (11 orang/tim) selama 2 x 45 menit untuk mencetak gol ke gawang lawan menggunakan kaki dan kepala.</p>
+                            
+                            <div class="space-y-2.5 mb-6">
+                                <div class="bg-blue-50/80 border border-blue-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpBlue mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Passing (Mengoper):</strong> Menggunakan kaki bagian dalam untuk umpan pendek yang akurat.
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50/80 border border-blue-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpBlue mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Dribbling (Menggiring):</strong> Mendorong bola perlahan dengan kaki luar/dalam saat bergerak.
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50/80 border border-blue-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpBlue mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Shooting (Menembak):</strong> Menendang keras memakai punggung kaki mengincar gawang lawan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bola Voli -->
+                <div class="sport-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg sport-card-hover flex flex-col" data-keywords="bola voli passing bawah atas smash block net pbvsi">
+                    <div class="relative h-52 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=700&q=80" 
+                             alt="Bola Voli" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=700&q=80';">
+                        <span class="absolute top-4 left-4 bg-darkNavy/85 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                            <i class="fa-solid fa-volleyball text-smpPurple mr-1"></i> Bola Voli
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-darkNavy font-heading mb-2">Bola Voli</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">Dimainkan 2 tim (6 orang/tim) memantulkan bola melewati net tanpa membiarkan bola menyentuh lantai sendiri.</p>
+                            
+                            <div class="space-y-2.5 mb-6">
+                                <div class="bg-purple-50/80 border border-purple-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpPurple mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Passing Bawah:</strong> Merapatkan kedua lengan lurus ke depan menerima bola rendah/servis.
+                                    </div>
+                                </div>
+                                <div class="bg-purple-50/80 border border-purple-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpPurple mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Passing Atas:</strong> Mendorong bola dengan jari-jari tangan terbuka di atas dahi.
+                                    </div>
+                                </div>
+                                <div class="bg-purple-50/80 border border-purple-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-smpPurple mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Smash / Spike:</strong> Pukulan keras melompat tinggi menukik tajam ke arena lawan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bola Basket -->
+                <div class="sport-card bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg sport-card-hover flex flex-col" data-keywords="bola basket dribble lay up shooting ring chest pass lay-up perbasi">
+                    <div class="relative h-52 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=700&q=80" 
+                             alt="Bola Basket" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=700&q=80';">
+                        <span class="absolute top-4 left-4 bg-darkNavy/85 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                            <i class="fa-solid fa-basketball text-smpYellow mr-1"></i> Bola Basket
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-darkNavy font-heading mb-2">Bola Basket</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">Dimainkan 2 tim (5 orang/tim) memasukkan bola ke dalam keranjang ring lawan sebanyak-banyaknya.</p>
+                            
+                            <div class="space-y-2.5 mb-6">
+                                <div class="bg-amber-50/80 border border-amber-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-amber-500 mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Chest Pass:</strong> Operan lurus setinggi dada menggunakan dorongan dua tangan.
+                                    </div>
+                                </div>
+                                <div class="bg-amber-50/80 border border-amber-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-amber-500 mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Dribbling:</strong> Memantulkan bola ke lantai mengontrol gerakan menggunakan jari tangan.
+                                    </div>
+                                </div>
+                                <div class="bg-amber-50/80 border border-amber-100 p-3 rounded-xl flex items-start space-x-3">
+                                    <i class="fa-solid fa-circle-check text-amber-500 mt-0.5 flex-shrink-0"></i>
+                                    <div class="text-xs text-slate-700">
+                                        <strong class="text-darkNavy font-bold block">Lay-up Shot:</strong> Tembakan melayang dekat ring yang diawali dengan 2 langkah cepat.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERI 2: PERMAINAN BOLA KECIL -->
+    <section id="bola-kecil" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 bg-smpPurple text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-md">02</div>
+                <span class="text-smpPurple font-bold text-sm tracking-wider uppercase">Modul Pembelajaran</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-darkNavy font-heading mb-3">Permainan Bola Kecil</h2>
+            <p class="text-slate-600 mb-10 max-w-2xl text-sm sm:text-base">Olahraga yang menggunakan raket, bet pemukul, serta bola berukuran kecil atau shuttlecock. Melatih kelincahan dan kecepatan reaksi.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bulutangkis -->
+                <div class="sport-card bg-purple-50/40 border-2 border-purple-100 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center shadow-sm" data-keywords="bulutangkis badminton forehand backhand smash shuttlecock kok raket pbsi">
+                    <div class="w-full sm:w-1/2 h-52 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=700&q=80" 
+                             alt="Bulutangkis" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1521537634581-0ddea2eed258?auto=format&fit=crop&w=700&q=80';">
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <span class="bg-smpPurple text-white text-xs font-bold px-3 py-1 rounded-full">Bulutangkis (Badminton)</span>
+                        <h3 class="text-2xl font-bold text-darkNavy font-heading mt-2 mb-2">Bulutangkis</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">Menyeberangkan shuttlecock melewati net ke lapangan lawan agar menghasilkan poin.</p>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-smpPurple font-bold"></i>
+                                <span><strong>Forehand Grip:</strong> Memegang raket seperti posisi berjabat tangan.</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-smpPurple font-bold"></i>
+                                <span><strong>Backhand Grip:</strong> Ibu jari menekan bagian pipih gagang raket.</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-smpPurple font-bold"></i>
+                                <span><strong>Servis & Smash:</strong> Pukulan awal pembuka dan pitingan tajam cepat.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenis Meja -->
+                <div class="sport-card bg-emerald-50/40 border-2 border-emerald-100 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center shadow-sm" data-keywords="tenis meja pingpong bet shakehand penhold push drive block ptmsi">
+                    <div class="w-full sm:w-1/2 h-52 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-900 relative">
+                        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=700&q=80" 
+                             alt="Tenis Meja" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=700&q=80';">
+                    </div>
+                    <div class="w-full sm:w-1/2">
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Tenis Meja (Pingpong)</span>
+                        <h3 class="text-2xl font-bold text-darkNavy font-heading mt-2 mb-2">Tenis Meja</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">Dimainkan di atas meja ber-net kecil memakai bet kayu berlapis karet khusus.</p>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-emerald-600 font-bold"></i>
+                                <span><strong>Shakehand Grip:</strong> Memegang bet menyerupai gaya berjabat tangan.</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-emerald-600 font-bold"></i>
+                                <span><strong>Penhold Grip:</strong> Memegang bet dengan gaya memegang pena/pulpen.</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-angle-right text-emerald-600 font-bold"></i>
+                                <span><strong>Pukulan Drive & Push:</strong> Serangan gesekan tajam serta dorongan kontrol.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERI 3: ATLETIK -->
+    <section id="atletik" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 bg-smpPink text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-md">03</div>
+                <span class="text-smpPink font-bold text-sm tracking-wider uppercase">Modul Pembelajaran</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-darkNavy font-heading mb-3">Cabang Atletik (Mother of Sports)</h2>
+            <p class="text-slate-600 mb-10 max-w-2xl text-sm sm:text-base">Induk dari seluruh cabang olahraga. Terdiri dari gerak dasar manusia: jalan, lari, melompat, dan melempar.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Lari Jarak Pendek -->
+                <div class="sport-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md sport-card-hover" data-keywords="atletik lari jarak pendek sprint start jongkok bersedia siap ya finish pasasi">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-pink-100 text-smpPink rounded-2xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-stopwatch"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-darkNavy font-heading">Lari Jarak Pendek (Sprint)</h3>
+                        </div>
+                        <span class="text-xs font-bold text-smpPink bg-pink-50 px-3 py-1 rounded-full border border-pink-200">100m, 200m, 400m</span>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Berlari dengan kecepatan maksimum sepanjang jarak lintasan menggunakan teknik awal **Start Jongkok**.</p>
+                    
+                    <div class="grid grid-cols-3 gap-3 text-center text-xs">
+                        <div class="p-3 bg-pink-50/60 rounded-xl border border-pink-100">
+                            <strong class="block text-slate-800 mb-1 font-bold">1. Bersedia</strong>
+                            <span class="text-slate-500">Berlutut di balok start, posisi telapak jari membentuk huruf V di belakang garis.</span>
+                        </div>
+                        <div class="p-3 bg-pink-50/60 rounded-xl border border-pink-100">
+                            <strong class="block text-slate-800 mb-1 font-bold">2. Siap!</strong>
+                            <span class="text-slate-500">Pinggul diangkat lebih tinggi dari bahu, berat badan bertumpu ke depan.</span>
+                        </div>
+                        <div class="p-3 bg-pink-50/60 rounded-xl border border-pink-100">
+                            <strong class="block text-slate-800 mb-1 font-bold">3. YA! / Aba-aba</strong>
+                            <span class="text-slate-500">Menolak kuat balok start dan melaju kencang menuju garis finis.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lompat Jauh -->
+                <div class="sport-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md sport-card-hover" data-keywords="lompat jauh awalan tolakan tumpuan melayang mendarat pasir gaya menggantung berjalan di udara">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-blue-100 text-smpBlue rounded-2xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-person-running"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-darkNavy font-heading">Lompat Jauh</h3>
+                        </div>
+                        <span class="text-xs font-bold text-smpBlue bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Tolakan & Bak Pasir</span>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Bertujuan melompat sejauh-jauhnya dari papan tumpuan menuju bak pasir melalui 4 tahapan gerak presisi.</p>
+
+                    <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                        <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                            <strong class="block text-darkNavy font-bold">Awalan</strong>
+                            <span class="text-slate-500">Lari makin cepat.</span>
+                        </div>
+                        <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                            <strong class="block text-darkNavy font-bold">Tolakan</strong>
+                            <span class="text-slate-500">Pijakan 1 kaki terkuat.</span>
+                        </div>
+                        <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                            <strong class="block text-darkNavy font-bold">Melayang</strong>
+                            <span class="text-slate-500">Menjaga keseimbangan.</span>
+                        </div>
+                        <div class="p-2.5 bg-blue-50/60 rounded-xl border border-blue-100">
+                            <strong class="block text-darkNavy font-bold">Mendarat</strong>
+                            <span class="text-slate-500">2 kaki mengeper bersama.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERI 4: KEBUGARAN JASMANI -->
+    <section id="kebugaran" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-darkNavy via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="max-w-2xl mb-10">
+                        <span class="bg-smpCyan text-darkNavy font-bold text-xs uppercase px-4 py-1.5 rounded-full">Kebugaran Jasmani</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold font-heading mt-3">Komponen Utama Kebugaran Tubuh</h2>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">Kemampuan fisik tubuh untuk melakukan aktivitas harian tanpa mengalami kelelahan berlebih. Terdiri dari 10 komponen utama beserta latihan pendukungnya.</p>
+                    </div>
+
+                    <!-- Grid 10 Komponen Utama Kebugaran Tubuh -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+                        
+                        <!-- 1. Daya Tahan (Endurance) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-smpCyan transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-smpCyan text-darkNavy rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">1. Daya Tahan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan organ jantung, paru-paru, dan sistem peredaran darah beraktivitas dalam durasi lama.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-smpCyan font-semibold">
+                                <i class="fa-solid fa-person-running mr-1"></i> Jogging, Renang, Cycling
+                            </div>
+                        </div>
+
+                        <!-- 2. Kekuatan (Strength) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-smpPurple transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-smpPurple text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">2. Kekuatan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan otot untuk menerima dan menahan beban saat melakukan aktivitas fisik.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-smpPurple font-semibold">
+                                <i class="fa-solid fa-child mr-1"></i> Push-up, Sit-up, Squat
+                            </div>
+                        </div>
+
+                        <!-- 3. Daya Otot (Power) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-smpYellow transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-smpYellow text-darkNavy rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">3. Daya Otot</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kombinasi antara kekuatan otot dan kecepatan gerak saat mengeluarkan tenaga maksimal.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-smpYellow font-semibold">
+                                <i class="fa-solid fa-arrows-up-to-line mr-1"></i> Vertical Jump, Plyometrics
+                            </div>
+                        </div>
+
+                        <!-- 4. Kecepatan (Speed) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-smpPink transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-smpPink text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">4. Kecepatan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan menempuh suatu jarak lintasan dalam waktu sesingkat mungkin.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-smpPink font-semibold">
+                                <i class="fa-solid fa-stopwatch mr-1"></i> Sprint 50m / 100m
+                            </div>
+                        </div>
+
+                        <!-- 5. Kelenturan (Flexibility) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-emerald-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-child-releasing"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">5. Kelenturan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Luas ruang gerak pada persendian tubuh agar gerakan fleksibel dan bebas cedera.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-emerald-400 font-semibold">
+                                <i class="fa-solid fa-person-dots-from-line mr-1"></i> Yoga, Peregangan Dinamis
+                            </div>
+                        </div>
+
+                        <!-- 6. Kelincahan (Agility) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-orange-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-orange-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-shuffle"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">6. Kelincahan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan mengubah arah dan posisi tubuh dengan cepat tanpa kehilangan keseimbangan.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-orange-400 font-semibold">
+                                <i class="fa-solid fa-person-running-fast mr-1"></i> Lari Zig-zag, Shuttle Run
+                            </div>
+                        </div>
+
+                        <!-- 7. Keseimbangan (Balance) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-indigo-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-indigo-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">7. Keseimbangan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan mengendalikan organ saraf dan otot untuk mempertahankan posisi tubuh.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-indigo-400 font-semibold">
+                                <i class="fa-solid fa-plane mr-1"></i> Sikap Kapal Terbang, Handstand
+                            </div>
+                        </div>
+
+                        <!-- 8. Koordinasi (Coordination) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-teal-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-teal-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">8. Koordinasi</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan mengintegrasikan beberapa gerakan tubuh yang berbeda menjadi satu gerak efektif.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-teal-400 font-semibold">
+                                <i class="fa-solid fa-baseball mr-1"></i> Lempar Tangkap Bola Ke Dinding
+                            </div>
+                        </div>
+
+                        <!-- 9. Ketepatan (Accuracy) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-rose-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-rose-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">9. Ketepatan</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan mengendalikan gerakan-gerakan bebas terhadap suatu sasaran target.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-rose-400 font-semibold">
+                                <i class="fa-solid fa-crosshair mr-1"></i> Memanah, Shooting Basket
+                            </div>
+                        </div>
+
+                        <!-- 10. Reaksi (Reaction) -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:border-sky-400 transition flex flex-col justify-between">
+                            <div>
+                                <div class="w-11 h-11 bg-sky-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                                <h3 class="font-heading text-lg font-bold mb-1">10. Reaksi</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed mb-3">Kemampuan tubuh merespons rangsangan atau stimulus secara cepat dan sigap.</p>
+                            </div>
+                            <div class="pt-3 border-t border-white/10 text-xs text-sky-400 font-semibold">
+                                <i class="fa-solid fa-flag-checkered mr-1"></i> Tangkap Bola Refleks, Start Lari
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KUIS INTERAKTIF SECTION -->
+    <section id="kuis-smp" class="py-16 bg-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="bg-smpPurple text-white font-bold text-xs uppercase px-4 py-1.5 rounded-full">Evaluasi Pemahaman</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkNavy font-heading mt-2">🎮 Kuis PJOK SMP</h2>
+                <p class="text-slate-600 text-sm mt-1">Uji seberapa jauh pemahamanmu mengenai materi olahraga di atas!</p>
+            </div>
+
+            <!-- Quiz Container -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden p-6 sm:p-10 relative">
+                
+                <!-- Quiz Active Screen -->
+                <div id="quiz-screen">
+                    <!-- Progress Bar Header -->
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-3">
+                        <span id="question-tracker">Pertanyaan 1 dari 5</span>
+                        <span class="text-smpBlue font-extrabold">Skor: <span id="current-score">0</span></span>
+                    </div>
+                    
+                    <div class="w-full bg-slate-100 rounded-full h-2.5 mb-6 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-smpBlue to-smpPurple h-2.5 rounded-full transition-all duration-300" style="width: 20%"></div>
+                    </div>
+
+                    <!-- Question Text -->
+                    <h3 id="question-text" class="text-lg sm:text-xl font-bold text-darkNavy mb-6 leading-relaxed">
+                        Memuat pertanyaan kuis...
+                    </h3>
+
+                    <!-- Options Grid -->
+                    <div id="options-container" class="space-y-3 mb-6">
+                        <!-- Options generated by JS -->
+                    </div>
+
+                    <!-- Dynamic Feedback Message -->
+                    <div id="feedback-box" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold mb-6"></div>
+
+                    <!-- Action Button -->
+                    <button id="next-btn" class="hidden w-full py-4 bg-darkNavy text-white font-heading font-bold rounded-2xl shadow-lg hover:bg-slate-800 transition flex items-center justify-center text-base">
+                        Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="result-screen" class="hidden flex flex-col items-center justify-center text-center py-6 px-2">
+                    <div class="relative mb-6 flex justify-center items-center">
+                        <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-smpYellow via-smpPink to-smpPurple opacity-75 blur-md animate-pulse"></div>
+                        <div class="relative w-28 h-28 bg-gradient-to-tr from-amber-400 to-smpYellow rounded-full flex items-center justify-center text-5xl text-white shadow-2xl border-4 border-white">
+                            <i class="fa-solid fa-trophy drop-shadow-md"></i>
+                        </div>
+                    </div>
+
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-darkNavy font-heading mb-2">Selamat! Kuis Selesai 🎉</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm max-w-md mx-auto mb-6">
+                        Kamu telah menyelesaikan seluruh soal evaluasi materi PJOK SMP.
+                    </p>
+                    
+                    <!-- Circular Score Card -->
+                    <div class="bg-gradient-to-b from-blue-50/80 to-purple-50/80 border-2 border-slate-200/80 rounded-3xl p-6 max-w-xs w-full mx-auto mb-6 shadow-inner flex flex-col items-center">
+                        <span class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-2">Nilai Akhir Kamu</span>
+                        
+                        <div class="w-32 h-32 rounded-full bg-white shadow-md border-4 border-smpBlue flex flex-col items-center justify-center mb-3">
+                            <span class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-smpBlue via-smpPurple to-smpPink" id="final-score">0</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Dari 100</span>
+                        </div>
+
+                        <div class="w-full bg-white/90 p-3 rounded-2xl border border-slate-200/60">
+                            <p class="text-xs sm:text-sm font-semibold text-slate-700 leading-snug" id="result-message">
+                                Memuat evaluasi...
+                            </p>
+                        </div>
+                    </div>
+
+                    <button id="restart-btn" class="px-8 py-3.5 bg-gradient-to-r from-smpBlue via-smpPurple to-smpPink text-white font-heading font-bold text-base rounded-2xl shadow-xl hover:scale-105 transition flex items-center justify-center">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Ulangi Kuis Seru
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Enhanced & Symmetrical) -->
+    <footer class="bg-darkNavy text-white pt-16 pb-12 border-t-4 border-smpBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center text-center">
+                
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-smpBlue to-smpPurple rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-smpBlue/40">
+                        <i class="fa-solid fa-volleyball"></i>
+                    </div>
+                    <span class="text-3xl font-extrabold font-heading tracking-wide">PJOK<span class="text-smpBlue">SMP</span><span class="text-smpPink">.ZONE</span></span>
+                </div>
+                
+                <p class="text-slate-400 text-xs sm:text-sm max-w-lg mb-8 leading-relaxed">
+                    Media Pembelajaran PJOK SMP Interaktif, Bergambar, dan Mudah Dipahami.
+                </p>
+
+                <!-- Detailed Creator Credit Card (Footer) -->
+                <div class="w-full max-w-2xl bg-slate-800/80 border border-slate-700/80 rounded-3xl p-6 mb-8 shadow-lg backdrop-blur-sm">
+                    <span class="text-xs font-bold text-smpCyan uppercase tracking-widest block mb-1">Identitas Penyusun Media</span>
+                    <h4 class="text-xl sm:text-2xl font-bold font-heading text-white mb-2">Muhammad Syaamil Arief</h4>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-2 text-xs font-semibold text-slate-300 mt-3">
+                        <span class="bg-slate-700/90 px-3 py-1.5 rounded-xl border border-slate-600/60 text-smpBlue font-bold">
+                            <i class="fa-solid fa-id-card mr-1"></i> NPM: 41182191240060
+                        </span>
+                        <span class="bg-slate-700/90 px-3 py-1.5 rounded-xl border border-slate-600/60 text-smpPurple font-bold">
+                            <i class="fa-solid fa-users mr-1"></i> Paralel 2
+                        </span>
+                        <span class="bg-slate-700/90 px-3 py-1.5 rounded-xl border border-slate-600/60 text-emerald-400 font-bold">
+                            <i class="fa-solid fa-building-columns mr-1"></i> Universitas Muhammadiyah Indonesia
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 text-xs font-heading text-slate-400 mb-8">
+                    <a href="#bola-besar" class="hover:text-smpBlue transition">Bola Besar</a>
+                    <span>•</span>
+                    <a href="#bola-kecil" class="hover:text-smpPurple transition">Bola Kecil</a>
+                    <span>•</span>
+                    <a href="#atletik" class="hover:text-smpPink transition">Atletik</a>
+                    <span>•</span>
+                    <a href="#kebugaran" class="hover:text-smpCyan transition">Kebugaran</a>
+                    <span>•</span>
+                    <a href="#kuis-smp" class="hover:text-smpYellow transition">Kuis Evaluasi</a>
+                </div>
+
+                <div class="w-full border-t border-slate-800 pt-6 text-xs text-slate-500">
+                    <p>© 2026 PJOK SMP Zone. Hak Cipta Dilindungi Undang-Undang.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Pertanyaan Kuis PJOK SMP
+        const quizDataSMP = [
+            {
+                question: "Dalam permainan sepak bola, teknik mengoper bola menggunakan kaki bagian dalam bertujuan untuk...",
+                options: ["Menendang bola sejauh-jauhnya", "Operan jarak pendek yang akurat dan terukur", "Menembak keras ke gawang", "Menghadang bola di udara"],
+                correct: 1,
+                explanation: "Tepat sekali! Passing kaki bagian dalam memberikan akurasi tinggi untuk operan pendek teman satu tim."
+            },
+            {
+                question: "Dalam permainan bola basket, tembakan melayang mendekati ring setelah melangkah 2 kali dinamakan...",
+                options: ["Chest Pass", "Lay-up Shot", "Bound Pass", "Pivot"],
+                correct: 1,
+                explanation: "Tepat! Lay-up shot merupakan teknik memasukkan bola dekat ring diawali dengan 2 langkah melayang."
+            },
+            {
+                question: "Pukulan menukik tajam dan keras ke arah lapangan lawan dalam permainan bola voli dinamakan...",
+                options: ["Passing bawah", "Service atas", "Smash / Spike", "Block"],
+                correct: 2,
+                explanation: "Benar! Smash (Spike) dilakukan dengan melompat tinggi memukul bola keras di atas net."
+            },
+            {
+                question: "Pada cabang atletik lari jarak pendek (sprint), jenis start yang wajib digunakan di garis start adalah...",
+                options: ["Start Berdiri", "Start Melayang", "Start Jongkok", "Start Duduk"],
+                correct: 2,
+                explanation: "Hebat! Start Jongkok (crouch start) adalah start standar untuk seluruh nomor lari jarak pendek."
+            },
+            {
+                question: "Cara memegang bet tenis meja seperti gaya memegang pena / pulpen dikenal dengan sebutan...",
+                options: ["Shakehand Grip", "Penhold Grip", "Combination Grip", "Forehand Grip"],
+                correct: 1,
+                explanation: "Tepat! Penhold Grip adalah teknik pegangan bet menyerupai gaya memegang pena."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOption = null;
+
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainerEl = document.getElementById('options-container');
+        const questionTrackerEl = document.getElementById('question-tracker');
+        const currentScoreEl = document.getElementById('current-score');
+        const progressBarEl = document.getElementById('progress-bar');
+        const nextBtn = document.getElementById('next-btn');
+        const feedbackBox = document.getElementById('feedback-box');
+        
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
+        const finalScoreEl = document.getElementById('final-score');
+        const resultMessageEl = document.getElementById('result-message');
+        const restartBtn = document.getElementById('restart-btn');
+
+        // Search Filter
+        const searchInput = document.getElementById('search-input');
+        const sportCards = document.querySelectorAll('.sport-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            sportCards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const textContent = card.textContent.toLowerCase();
+                if (keywords.includes(query) || textContent.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Mobile Nav Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Load Question
+        function loadQuestion() {
+            const currentData = quizDataSMP[currentQuestionIndex];
+            questionTextEl.textContent = `${currentQuestionIndex + 1}. ${currentData.question}`;
+            questionTrackerEl.textContent = `Pertanyaan ${currentQuestionIndex + 1} dari ${quizDataSMP.length}`;
+            
+            const progressPercent = ((currentQuestionIndex + 1) / quizDataSMP.length) * 100;
+            progressBarEl.style.width = `${progressPercent}%`;
+
+            optionsContainerEl.innerHTML = '';
+            feedbackBox.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            selectedOption = null;
+
+            currentData.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-4 rounded-2xl border-2 border-slate-200 hover:border-smpBlue hover:bg-blue-50/50 font-semibold text-slate-700 transition flex items-center justify-between text-sm option-btn`;
+                btn.innerHTML = `
+                    <span><strong class="text-smpBlue mr-2">${String.fromCharCode(65 + index)}.</strong> ${option}</span>
+                    <i class="fa-regular fa-circle text-slate-300 status-icon"></i>
+                `;
+                btn.onclick = () => selectOption(index, btn);
+                optionsContainerEl.appendChild(btn);
+            });
+        }
+
+        // Option Click
+        function selectOption(index, button) {
+            if (selectedOption !== null) return;
+            selectedOption = index;
+
+            const currentData = quizDataSMP[currentQuestionIndex];
+            const allOptionBtns = optionsContainerEl.querySelectorAll('.option-btn');
+
+            if (index === currentData.correct) {
+                score += 20;
+                currentScoreEl.textContent = score;
+                button.classList.remove('border-slate-200', 'hover:bg-blue-50/50');
+                button.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900');
+                button.querySelector('.status-icon').className = 'fa-solid fa-circle-check text-emerald-500 text-lg';
+
+                feedbackBox.textContent = `🎯 ${currentData.explanation}`;
+                feedbackBox.className = "p-4 rounded-2xl text-xs sm:text-sm font-semibold mb-6 bg-emerald-100/80 text-emerald-900 border border-emerald-300 block";
+            } else {
+                button.classList.remove('border-slate-200', 'hover:bg-blue-50/50');
+                button.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-900');
+                button.querySelector('.status-icon').className = 'fa-solid fa-circle-xmark text-rose-500 text-lg';
+
+                const correctBtn = allOptionBtns[currentData.correct];
+                correctBtn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-900');
+                correctBtn.querySelector('.status-icon').className = 'fa-solid fa-circle-check text-emerald-500 text-lg';
+
+                feedbackBox.textContent = `❌ ${currentData.explanation}`;
+                feedbackBox.className = "p-4 rounded-2xl text-xs sm:text-sm font-semibold mb-6 bg-rose-100/80 text-rose-900 border border-rose-300 block";
+            }
+
+            nextBtn.classList.remove('hidden');
+            allOptionBtns.forEach(btn => btn.style.pointerEvents = 'none');
+        }
+
+        // Next Question
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizDataSMP.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        // Show Results
+        function showResults() {
+            quizScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+            finalScoreEl.textContent = score;
+
+            if (score === 100) {
+                resultMessageEl.textContent = "🔥 Sempurna! Kamu menguasai seluruh materi PJOK SMP dengan luar biasa!";
+            } else if (score >= 60) {
+                resultMessageEl.textContent = "👏 Bagus! Pemahaman materi olahragamu sudah cukup baik!";
+            } else {
+                resultMessageEl.textContent = "📚 Ulangi membaca modul materi di atas dan coba tes kuis sekali lagi ya!";
+            }
+        }
+
+        // Restart Quiz
+        restartBtn.addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            currentScoreEl.textContent = 0;
+            resultScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+            loadQuestion();
+        });
+
+        window.onload = function() {
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
